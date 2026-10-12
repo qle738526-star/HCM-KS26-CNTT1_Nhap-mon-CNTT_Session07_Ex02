@@ -1,0 +1,14 @@
+1. Sai lầm của An:
+An dùng nhầm lệnh tìm kiếm file/thư mục thay vì đọc nội dung bên trong file.
+
+2. Phân biệt Get-ChildItem và Select-String:
+
+Get-ChildItem (alias: dir, ls): Chỉ dùng để tìm tên file hoặc thư mục trên ổ cứng. Lệnh Get-ChildItem -Filter "*404*" của An chỉ tìm file nào có tên chứa chữ "404", không đọc dữ liệu bên trong.
+
+Select-String (tương tự grep trên Linux): Dùng để quét và lọc nội dung chữ nằm bên trong file.
+
+Phần 2: Câu lệnh PowerShell chuẩn
+Lệnh lọc tất cả các dòng chứa chữ "ERROR" trong file access.log và hiển thị kèm số dòng:
+
+PowerShell
+Select-String -Path "access.log" -Pattern "ERROR"
